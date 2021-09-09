@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Mainlayout component Render Mainlayout 1`] = `
+<div>
+  <div
+    class="sc-gsTEea jpggzP"
+  >
+    <h1
+      class="sc-bdfBQB fJsost"
+    >
+      TodoList
+    </h1>
+  </div>
+</div>
+`;
