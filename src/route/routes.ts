@@ -1,10 +1,15 @@
 import { lazy } from 'react';
 import { RouteProps } from 'react-router-dom';
 
-const routes: RouteProps[] = [
+export interface AuthRouteProps extends RouteProps {
+    requireAuth?: boolean;
+}
+
+const routes: AuthRouteProps[] = [
   {
     path: '/',
     exact: true,
+    requireAuth: true,
     component: lazy(() => import('src/page/HomePage')),
   },
   {
