@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Suspense } from 'react';
+import RouteView from 'src/route/RouteView';
 import styled from 'styled-components';
 
 const Title = styled.h1`
@@ -15,6 +16,9 @@ const Wrapper = styled.div`
 const MainLayout = (): React.ReactElement => (
   <Wrapper>
     <Title>TodoList</Title>
+    <Suspense fallback={<div>loading ...</div>}>
+      <RouteView />
+    </Suspense>
   </Wrapper>
 );
 
