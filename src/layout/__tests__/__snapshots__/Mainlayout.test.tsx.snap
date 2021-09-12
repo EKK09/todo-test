@@ -3,13 +3,10 @@
 exports[`Mainlayout component Render Mainlayout 1`] = `
 <div>
   <div
-    class="sc-gsTEea jpggzP"
+    class="sc-bdfBQB fujLNr"
   >
-    <h1
-      class="sc-bdfBQB fJsost"
-    >
-      TodoList
-    </h1>
+    <mock-header />
+    <mock-routerview />
   </div>
 </div>
 `;
