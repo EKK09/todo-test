@@ -1,6 +1,6 @@
 import React, { ChangeEvent } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Todo } from 'src/store/todoList';
+import useTodoListStore, { Todo } from 'src/store/todoList';
 import styled from 'styled-components';
 
 export interface TodoListItemProps {
@@ -40,17 +40,21 @@ const CheckLabel = styled.span`
 const TodoListItem = (props: TodoListItemProps): React.ReactElement => {
   const { todo } = props;
   const { t } = useTranslation();
-  const tags = todo.tags.map((tag) => <Tag key={tag}>{tag}</Tag>);
+  const updateTodo = useTodoListStore((state) => state.updateTodo);
   const handleCompletedChange = (event: ChangeEvent<HTMLInputElement>) => {
-    // TODO: implement toggle completed feature
+    updateTodo({
+      ...todo,
+      completed: event.target.checked,
+    });
   };
+
   return (
     <Wrapper>
       <Title>
         {todo.title}
       </Title>
       <TagsWrapper>
-        {tags}
+        {todo.tags.map((tag) => <Tag key={tag}>{tag}</Tag>)}
       </TagsWrapper>
       <div>
         <CheckLabel>
