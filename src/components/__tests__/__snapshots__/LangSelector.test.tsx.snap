@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LangSelector component Render LangSelector 1`] = `
+<div>
+  <div
+    class="sc-bdfBQB kfrCnO"
+  >
+    <select
+      class="sc-gsTEea gNqOUL"
+      data-testid="lang-selector"
+    >
+      <option
+        value="en-US"
+      >
+        English
+      </option>
+      <option
+        value="zh-TW"
+      >
+        中文
+      </option>
+    </select>
+  </div>
+</div>
+`;

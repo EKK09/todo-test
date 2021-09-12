@@ -24,7 +24,7 @@ const LangSelector = (): React.ReactElement => {
   ));
   return (
     <Wrapper>
-      <Select value={currentlang} onChange={handleLangSelect}>
+      <Select value={currentlang} onChange={handleLangSelect} data-testid="lang-selector">
         {langOptions}
       </Select>
     </Wrapper>
