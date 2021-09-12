@@ -1,4 +1,5 @@
 import { fetchTodoListApi } from 'src/api/todoList';
+import { FETCH_TODO_LIST_ERROR } from 'src/constant/errorMessage';
 import create from 'zustand';
 import useNotificationStore, { NotificationStatus } from './notification';
 import useUserStore from './user';
@@ -19,12 +20,15 @@ interface TodoListStore {
   removeTodoById: (id: number) => void;
   updateTodo: (todo: Todo) => void;
   setIsFetching: (isFetching: boolean) => void;
+  incrementCurrentPage: () => void;
+  setCurrentPage: (page: number) => void;
+  resetCurrentPage: () => void;
   fetchTodoList: () => Promise<void>;
 }
 
 const useTodoListStore = create<TodoListStore>((set, get) => ({
   todoList: [],
-  currentPage: 1,
+  currentPage: 0,
   isFetching: false,
 
   appendTodoList: (todos: Todo[]) => {
@@ -49,6 +53,18 @@ const useTodoListStore = create<TodoListStore>((set, get) => ({
     set({ isFetching });
   },
 
+  incrementCurrentPage: () => {
+    set((state) => ({ currentPage: state.currentPage + 1 }));
+  },
+
+  setCurrentPage: (page: number) => {
+    set(({ currentPage: page }));
+  },
+
+  resetCurrentPage: () => {
+    set(({ currentPage: 0 }));
+  },
+
   fetchTodoList: async () => {
     try {
       get().setIsFetching(true);
@@ -61,7 +77,7 @@ const useTodoListStore = create<TodoListStore>((set, get) => ({
       get().appendTodoList(todos);
     } catch (error) {
       useNotificationStore.getState().showNotification(
-        'fetch Todo List error',
+        FETCH_TODO_LIST_ERROR,
         NotificationStatus.FAIL,
       );
     } finally {
