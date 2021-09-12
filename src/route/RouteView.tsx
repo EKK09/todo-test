@@ -3,25 +3,26 @@ import {
   Switch,
   Route,
   Redirect,
+  useLocation,
 } from 'react-router-dom';
 import useUserStore from 'src/store/user';
 import routes, { AuthRouteProps } from './routes';
 
-const PrivateRoute = ({ component, ...rest }: AuthRouteProps) => {
+const PrivateRoute = (props: AuthRouteProps) => {
   const userId = useUserStore((state) => state.id);
+  const location = useLocation();
+
+  if (userId) {
+    return (
+      <Route {...props} />
+    );
+  }
   return (
-    <Route
-      {...rest}
-      render={({ location }) => (userId ? (
-        component
-      ) : (
-        <Redirect
-          to={{
-            pathname: '/login',
-            state: { from: location },
-          }}
-        />
-      ))}
+    <Redirect
+      to={{
+        pathname: '/login',
+        state: { from: location },
+      }}
     />
   );
 };
