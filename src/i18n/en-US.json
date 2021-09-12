@@ -1,0 +1,13 @@
+{
+    "global": {
+        "appName": "TODO LIST"
+    },
+    "loginPage": {
+        "account": "Account",
+        "password": "Password",
+        "login": "Login"
+    },
+    "todo": {
+        "completed": "Completed"
+    }
+}

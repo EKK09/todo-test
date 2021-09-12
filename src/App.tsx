@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import MainLayout from 'src/layout/MainLayout';
 import { Router } from 'react-router';
 import { createBrowserHistory } from 'history';
+import 'src/i18n';
 
 const history = createBrowserHistory();
 const App = (): React.ReactElement => (

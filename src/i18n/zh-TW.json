@@ -1,0 +1,13 @@
+{
+    "global": {
+        "appName": "代辦事項"
+    },
+    "loginPage": {
+        "account": "帳號",
+        "password": "密碼",
+        "login": "登入"
+    },
+    "todo": {
+        "completed": "完成"
+    }
+}

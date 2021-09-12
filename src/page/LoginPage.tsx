@@ -3,6 +3,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 import useUserStore from 'src/store/user';
 import styled from 'styled-components';
 import { Location } from 'history';
+import { useTranslation } from 'react-i18next';
 
 type LocationState = {
   from: Location;
@@ -43,6 +44,7 @@ const LoginPage = (): React.ReactElement => {
   const setUserId = useUserStore((state) => state.setId);
   const history = useHistory();
   const location: Location<LocationState> = useLocation();
+  const { t } = useTranslation();
 
   const handleLogin = () => {
     // TODO: implement login api
@@ -56,17 +58,19 @@ const LoginPage = (): React.ReactElement => {
     <Wrapper>
       <InputWrapper>
         <InputLabel>
-          Account
+          {t('loginPage.account')}
         </InputLabel>
         <Input value="IamDavid" readOnly />
       </InputWrapper>
       <InputWrapper>
         <InputLabel>
-          Password
+          {t('loginPage.password')}
         </InputLabel>
         <Input value="123456" type="password" readOnly />
       </InputWrapper>
-      <Button onClick={handleLogin}>Login</Button>
+      <Button onClick={handleLogin}>
+        {t('loginPage.login')}
+      </Button>
     </Wrapper>
   );
 };
