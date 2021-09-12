@@ -1,12 +1,7 @@
 import React, { Suspense } from 'react';
+import Header from 'src/components/Header';
 import RouteView from 'src/route/RouteView';
 import styled from 'styled-components';
-
-const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: palevioletred;
-`;
 
 const Wrapper = styled.div`
   max-width: 780px;
@@ -15,7 +10,7 @@ const Wrapper = styled.div`
 
 const MainLayout = (): React.ReactElement => (
   <Wrapper>
-    <Title>TodoList</Title>
+    <Header />
     <Suspense fallback={<div>loading ...</div>}>
       <RouteView />
     </Suspense>
