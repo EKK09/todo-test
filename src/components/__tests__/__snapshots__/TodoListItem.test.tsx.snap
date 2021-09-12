@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoListItem component Render TodoListItem chinese version 1`] = `
+<div>
+  <div
+    class="sc-bdfBQB ilRLIg"
+  >
+    <h3
+      class="sc-gsTEea jHzPNZ"
+    >
+      fooTitle
+    </h3>
+    <div
+      class="sc-dlfnuX iIifOV"
+    >
+      <span
+        class="sc-hKgJUU eywCOR"
+      >
+        fooTag
+      </span>
+    </div>
+    <div>
+      <span
+        class="sc-eCstlR dhWdTc"
+      >
+        完成
+        <input
+          data-testid="completed-checkbox"
+          type="checkbox"
+        />
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TodoListItem component Render TodoListItem english version 1`] = `
+<div>
+  <div
+    class="sc-bdfBQB ilRLIg"
+  >
+    <h3
+      class="sc-gsTEea jHzPNZ"
+    >
+      fooTitle
+    </h3>
+    <div
+      class="sc-dlfnuX iIifOV"
+    >
+      <span
+        class="sc-hKgJUU eywCOR"
+      >
+        fooTag
+      </span>
+    </div>
+    <div>
+      <span
+        class="sc-eCstlR dhWdTc"
+      >
+        Completed
+        <input
+          data-testid="completed-checkbox"
+          type="checkbox"
+        />
+      </span>
+    </div>
+  </div>
+</div>
+`;

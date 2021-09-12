@@ -59,7 +59,12 @@ const TodoListItem = (props: TodoListItemProps): React.ReactElement => {
       <div>
         <CheckLabel>
           {t('todo.completed')}
-          <input type="checkbox" checked={todo.completed} onChange={handleCompletedChange} />
+          <input
+            type="checkbox"
+            checked={todo.completed}
+            onChange={handleCompletedChange}
+            data-testid="completed-checkbox"
+          />
         </CheckLabel>
       </div>
     </Wrapper>
