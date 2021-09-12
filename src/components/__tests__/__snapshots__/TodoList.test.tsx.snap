@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoList component render TodoList todo list is not ready 1`] = `
+<div>
+  <div
+    class="sc-bdfBQB iunpcb"
+  >
+    Loading ....
+  </div>
+</div>
+`;
+
+exports[`TodoList component render TodoList todo list is ready 1`] = `
+<div>
+  <div>
+    <mock-todolistitem
+      todo="[object Object]"
+    />
+    <mock-todolistitem
+      todo="[object Object]"
+    />
+  </div>
+</div>
+`;
