@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component Render Header chinese version 1`] = `
+<div>
+  <div
+    class="sc-bdfBQB fOxfaE"
+  >
+    <div
+      class="sc-gsTEea jdCHeA"
+    >
+      待辦事項
+    </div>
+    <div
+      class="sc-dlfnuX knTXeM"
+    >
+      <mock-langselector />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Header component Render Header english version 1`] = `
+<div>
+  <div
+    class="sc-bdfBQB fOxfaE"
+  >
+    <div
+      class="sc-gsTEea jdCHeA"
+    >
+      TODO LIST
+    </div>
+    <div
+      class="sc-dlfnuX knTXeM"
+    >
+      <mock-langselector />
+    </div>
+  </div>
+</div>
+`;
