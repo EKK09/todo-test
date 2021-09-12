@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFoundPage component Render NotFoundPage 1`] = `
+<div>
+  <div
+    class="sc-bdfBQB kBTvhN"
+  >
+    <div>
+      <div
+        class="sc-gsTEea dSrViT"
+      >
+        404
+      </div>
+      <h2
+        class="sc-dlfnuX fHpSky"
+      >
+        Oops, Nothing here...
+      </h2>
+      <button
+        class="sc-hKgJUU cQDtsj"
+        type="submit"
+      >
+        Go Home
+      </button>
+    </div>
+  </div>
+</div>
+`;
