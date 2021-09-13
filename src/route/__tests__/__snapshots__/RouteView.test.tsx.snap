@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RouteView  HomePage show HomePage if user id has been setted 1`] = `
+<div>
+  <div>
+    fooFallback
+  </div>
+</div>
+`;
+
+exports[`RouteView  HomePage show HomePage if user id has been setted 2`] = `
+<div>
+  Mock-HomePage
+</div>
+`;
+
+exports[`RouteView  HomePage show LoginPage if user id has not been setted 1`] = `
+<div>
+  Mock-LoginPage
+</div>
+`;
+
+exports[`RouteView  show LoginPage 1`] = `
+<div>
+  <div>
+    fooFallback
+  </div>
+</div>
+`;
+
+exports[`RouteView  show LoginPage 2`] = `
+<div>
+  Mock-LoginPage
+</div>
+`;
+
+exports[`RouteView  show NotFoundPage if no path matched 1`] = `
+<div>
+  <div>
+    fooFallback
+  </div>
+</div>
+`;
+
+exports[`RouteView  show NotFoundPage if no path matched 2`] = `
+<div>
+  Mock-NotFoundPage
+</div>
+`;
