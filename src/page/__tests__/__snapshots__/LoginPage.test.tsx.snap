@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginPage component Render LoginPage chinese 1`] = `
+<div>
+  <div
+    class="sc-bdfBQB dTpMfB"
+  >
+    <div
+      class="sc-gsTEea dcpQyu"
+    >
+      <span
+        class="sc-dlfnuX kVaApt"
+      >
+        帳號
+      </span>
+      <input
+        class="sc-hKgJUU iQcqVk"
+        readonly=""
+        value="IamDavid"
+      />
+    </div>
+    <div
+      class="sc-gsTEea dcpQyu"
+    >
+      <span
+        class="sc-dlfnuX kVaApt"
+      >
+        密碼
+      </span>
+      <input
+        class="sc-hKgJUU iQcqVk"
+        readonly=""
+        type="password"
+        value="123456"
+      />
+    </div>
+    <button
+      class="sc-eCstlR jfrbkj"
+    >
+      登入
+    </button>
+  </div>
+</div>
+`;
+
+exports[`LoginPage component Render LoginPage english 1`] = `
+<div>
+  <div
+    class="sc-bdfBQB dTpMfB"
+  >
+    <div
+      class="sc-gsTEea dcpQyu"
+    >
+      <span
+        class="sc-dlfnuX kVaApt"
+      >
+        Account
+      </span>
+      <input
+        class="sc-hKgJUU iQcqVk"
+        readonly=""
+        value="IamDavid"
+      />
+    </div>
+    <div
+      class="sc-gsTEea dcpQyu"
+    >
+      <span
+        class="sc-dlfnuX kVaApt"
+      >
+        Password
+      </span>
+      <input
+        class="sc-hKgJUU iQcqVk"
+        readonly=""
+        type="password"
+        value="123456"
+      />
+    </div>
+    <button
+      class="sc-eCstlR jfrbkj"
+    >
+      Login
+    </button>
+  </div>
+</div>
+`;
