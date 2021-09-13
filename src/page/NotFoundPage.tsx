@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
+import { ROUTE_PATH } from 'src/route/routes';
 
 const Wrapper = styled.div`
   display: flex;
@@ -27,7 +28,7 @@ const NotFoundPage = (): React.ReactElement => {
   const history = useHistory();
 
   const goToHomePage = () => {
-    history.replace('/');
+    history.replace(ROUTE_PATH.HOME);
   };
 
   return (

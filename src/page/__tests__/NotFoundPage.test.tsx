@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { useHistory } from 'react-router-dom';
+import { ROUTE_PATH } from 'src/route/routes';
 import NotFoundPage from '../NotFoundPage';
 
 jest.mock('react-router-dom', () => ({
@@ -20,7 +21,7 @@ describe('NotFoundPage component', () => {
     const button = getByText('Go Home');
     fireEvent.click(button);
 
-    expect(mockReplace).toBeCalledWith('/');
+    expect(mockReplace).toBeCalledWith(ROUTE_PATH.HOME);
     expect(mockReplace).toBeCalledTimes(1);
   });
 });

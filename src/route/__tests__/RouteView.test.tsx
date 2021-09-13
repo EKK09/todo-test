@@ -5,7 +5,7 @@ import { createMemoryHistory } from 'history';
 import useUserStore from 'src/store/user';
 import RouteView from '../RouteView';
 import '@testing-library/jest-dom';
-import routes from '../routes';
+import routes, { ROUTE_PATH } from '../routes';
 
 jest.mock('src/page/LoginPage', () => () => 'Mock-LoginPage');
 jest.mock('src/page/HomePage', () => () => 'Mock-HomePage');
@@ -15,7 +15,7 @@ describe('RouteView ', () => {
   const fooFallback = <div>fooFallback</div>;
   it('show LoginPage', async () => {
     const history = createMemoryHistory();
-    history.push('/login');
+    history.push(ROUTE_PATH.LOGIN);
     const { container, getByText } = render(
       <Router history={history}>
         <Suspense fallback={fooFallback}>
@@ -35,7 +35,7 @@ describe('RouteView ', () => {
       useUserStore.setState({ id: null });
 
       const history = createMemoryHistory();
-      history.push('/');
+      history.push(ROUTE_PATH.HOME);
       const { container, getByText } = render(
         <Router history={history}>
           <Suspense fallback={fooFallback}>
@@ -53,7 +53,7 @@ describe('RouteView ', () => {
       useUserStore.setState({ id: 123 });
 
       const history = createMemoryHistory();
-      history.push('/');
+      history.push(ROUTE_PATH.HOME);
       const { container, getByText } = render(
         <Router history={history}>
           <Suspense fallback={fooFallback}>

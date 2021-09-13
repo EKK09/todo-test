@@ -4,6 +4,7 @@ import { I18nextProvider } from 'react-i18next';
 import i18n, { Lang } from 'src/i18n';
 import { useHistory, useLocation } from 'react-router-dom';
 import useUserStore from 'src/store/user';
+import { ROUTE_PATH } from 'src/route/routes';
 import LoginPage from '../LoginPage';
 
 jest.mock('react-router-dom', () => ({
@@ -64,6 +65,6 @@ describe('LoginPage component', () => {
 
     // user id  is hard-coded here
     expect(mockSetId).toBeCalledWith(1234);
-    expect(mockPush).toBeCalledWith('/');
+    expect(mockPush).toBeCalledWith(ROUTE_PATH.HOME);
   });
 });

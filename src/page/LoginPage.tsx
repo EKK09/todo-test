@@ -4,6 +4,7 @@ import useUserStore from 'src/store/user';
 import styled from 'styled-components';
 import { Location } from 'history';
 import { useTranslation } from 'react-i18next';
+import { ROUTE_PATH } from 'src/route/routes';
 
 type LocationState = {
   from: Location;
@@ -50,7 +51,7 @@ const LoginPage = (): React.ReactElement => {
     // TODO: implement login api
     setUserId(1234);
     const { from } = location.state;
-    const nextPath = from.pathname || '/';
+    const nextPath = from.pathname || ROUTE_PATH.HOME;
     history.push(nextPath);
   };
 

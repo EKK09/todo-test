@@ -6,7 +6,7 @@ import {
   useLocation,
 } from 'react-router-dom';
 import useUserStore from 'src/store/user';
-import routes, { AuthRouteProps } from './routes';
+import routes, { AuthRouteProps, ROUTE_PATH } from './routes';
 
 const PrivateRoute = (props: AuthRouteProps) => {
   const userId = useUserStore((state) => state.id);
@@ -20,7 +20,7 @@ const PrivateRoute = (props: AuthRouteProps) => {
   return (
     <Redirect
       to={{
-        pathname: '/login',
+        pathname: ROUTE_PATH.LOGIN,
         state: { from: location },
       }}
     />
