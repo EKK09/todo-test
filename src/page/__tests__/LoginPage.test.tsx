@@ -1,6 +1,5 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import TodoList from 'src/components/TodoList';
 import { I18nextProvider } from 'react-i18next';
 import i18n, { Lang } from 'src/i18n';
 import { useHistory, useLocation } from 'react-router-dom';
@@ -51,5 +50,20 @@ describe('LoginPage component', () => {
     // user id  is hard-coded here
     expect(mockSetId).toBeCalledWith(1234);
     expect(mockPush).toBeCalledWith(fooPath);
+  });
+  it('click login should set user id and push to home path if no from path', async () => {
+    const mockSetId = jest.fn();
+    const mockPush = jest.fn();
+    useUserStore.setState({ setId: mockSetId });
+    (useHistory as jest.Mock).mockImplementation(() => ({ push: mockPush }));
+    (useLocation as jest.Mock).mockImplementation(
+      () => ({ state: { from: { pathname: undefined } } }),
+    );
+    const wrapper = render(<LoginPage />);
+    fireEvent.click(wrapper.getByText('Login'));
+
+    // user id  is hard-coded here
+    expect(mockSetId).toBeCalledWith(1234);
+    expect(mockPush).toBeCalledWith('/');
   });
 });
