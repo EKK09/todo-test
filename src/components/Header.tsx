@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
+import useUserStore from 'src/store/user';
 import LangSelector from './LangSelector';
 
 const Wrapper = styled.div`
@@ -18,19 +19,37 @@ const Title = styled.div`
   line-height: 26px;
 `;
 
-const LangSelectorWrapper = styled.div`
+const OperationWrapper = styled.div`
   position: absolute;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
   right: 0;
+`;
+
+const Button = styled.button`
+  color: black;
+  font-weight: bolder;
+  background-color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
 `;
 
 const Header = (): React.ReactElement => {
   const { t } = useTranslation();
+  const { id, setId } = useUserStore();
+  const handleLogout = (): void => {
+    setId(null);
+  };
+  const isShowLogoutBtn: boolean = id !== null;
   return (
     <Wrapper>
       <Title>{t('global.appName')}</Title>
-      <LangSelectorWrapper>
+      <OperationWrapper>
         <LangSelector />
-      </LangSelectorWrapper>
+        {isShowLogoutBtn ? <Button type="button" onClick={handleLogout}>{t('global.logout')}</Button> : null}
+      </OperationWrapper>
     </Wrapper>
   );
 };

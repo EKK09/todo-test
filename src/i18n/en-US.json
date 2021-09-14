@@ -1,6 +1,7 @@
 {
     "global": {
-        "appName": "TODO LIST"
+        "appName": "TODO LIST",
+        "logout": "Logout"
     },
     "loginPage": {
         "account": "Account",

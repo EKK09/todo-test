@@ -1,6 +1,7 @@
 {
     "global": {
-        "appName": "待辦事項"
+        "appName": "待辦事項",
+        "logout": "登出"
     },
     "loginPage": {
         "account": "帳號",
