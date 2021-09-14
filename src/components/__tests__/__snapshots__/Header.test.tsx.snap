@@ -11,7 +11,7 @@ exports[`Header component Render Header chinese version 1`] = `
       待辦事項
     </div>
     <div
-      class="sc-dlfnuX knTXeM"
+      class="sc-dlfnuX kSvpTc"
     >
       <mock-langselector />
     </div>
@@ -30,7 +30,7 @@ exports[`Header component Render Header english version 1`] = `
       TODO LIST
     </div>
     <div
-      class="sc-dlfnuX knTXeM"
+      class="sc-dlfnuX kSvpTc"
     >
       <mock-langselector />
     </div>
