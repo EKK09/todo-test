@@ -16,6 +16,7 @@ interface TodoListStore {
   currentPage: number;
   isFetching: boolean;
   appendTodoList: (todos: Todo[]) => void;
+  resetTodoList: () => void;
   addTodo: (todo: Todo) => void;
   removeTodoById: (id: number) => void;
   updateTodo: (todo: Todo) => void;
@@ -33,6 +34,10 @@ const useTodoListStore = create<TodoListStore>((set, get) => ({
 
   appendTodoList: (todos: Todo[]) => {
     set((state) => ({ todoList: state.todoList.concat(todos) }));
+  },
+
+  resetTodoList: () => {
+    set({ todoList: [] });
   },
 
   addTodo: (todo: Todo) => {

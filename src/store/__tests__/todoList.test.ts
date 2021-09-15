@@ -126,6 +126,12 @@ describe('TodoList Store', () => {
       expect(useTodoListStore.getState().todoList).toEqual(expectedTodoList);
     });
 
+    it('reset todo list', () => {
+      useTodoListStore.getState().resetTodoList();
+
+      expect(useTodoListStore.getState().todoList.length).toBe(0);
+    });
+
     it('add todo to todo list', () => {
       useTodoListStore.getState().addTodo(bazTodo);
 
