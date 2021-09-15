@@ -12,17 +12,23 @@ const LoadingWrapper = styled.div`
 `;
 
 const TodoList = (): React.ReactElement => {
-  const { todoList, isFetching, fetchTodoList } = useTodoListStore(
+  const {
+    todoList, isFetching, fetchTodoList, restTodoList,
+  } = useTodoListStore(
     (state) => ({
       todoList: state.todoList,
       isFetching: state.isFetching,
       fetchTodoList: state.fetchTodoList,
+      restTodoList: state.resetTodoList,
     }),
   );
   const todoListItems = todoList.map((todo) => <TodoListItem key={todo.id} todo={todo} />);
 
   useEffect(() => {
     fetchTodoList();
+    return function cleanup() {
+      restTodoList();
+    };
   }, []);
 
   if (isFetching) {
