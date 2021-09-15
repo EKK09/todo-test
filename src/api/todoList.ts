@@ -1,21 +1,36 @@
+import { sleep } from 'src/common/asyncHelper';
 import { getToken } from 'src/common/localStorageHelper';
 import { HttpMethod } from 'src/constant/http';
+import { Todo } from 'src/store/todoList';
 
 export enum TODO_LIST_API_PATH {
     LIST = '/list?user=$user_id&page=$page&per_page=$perPage',
     TODO = '/todo'
 }
 
-export const fetchTodoListApi = (userId: number, page: number, perPage = 12): Promise<Response> => {
-  const url = TODO_LIST_API_PATH.LIST
-    .replace('$user_id', userId.toString())
-    .replace('$page', page.toString())
-    .replace('$perPage', perPage.toString());
-  return fetch(url, {
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${getToken()}`,
-    },
+const todoList: Todo[] = [
+  {
+    id: 1, title: 'Listen English Podcast', tags: ['learning', 'every night'], completed: false,
+  },
+  {
+    id: 2, title: 'Feed The Dog', tags: ['every day'], completed: false,
+  },
+  {
+    id: 3, title: 'Do 10 Push-ups', tags: ['before sleep', 'exercise'], completed: false,
+  },
+];
+
+export const fetchTodoListApi = async (
+  userId: number, page: number, perPage = 12,
+): Promise<any> => {
+  await sleep(2);
+  const successResponse = {
+    ok: true,
+    json: async () => todoList,
+  };
+
+  return new Promise((res) => {
+    res(successResponse);
   });
 };
 
